@@ -38,12 +38,22 @@ syn match pixelTypes "srgba8unorm<\(half4\|float4\)>"
 syn match pixelTypes "rgba16\(u\|s\)norm<float4>"
 syn match pixelTypes "rgb10a2<\(half4\|float4\)>"
 syn match pixelTypes "rg\(11b10f\|b9e5\)<\(half3\|float3\)>"
+syn match accessTypes "access::\(sample\|read\|write\|read_write\)"
+syn match coordTypes "coord::\(normalized\|pixel\)"
+syn match addressTypes "address::\(repeat\|mirrored_repeat\|clamp_to_edge\|clamp_to_zero\|clamp_to_border\)"
+syn match filterTypes "\(mag\|min\)\?_\?filter::\(nearest\|linear\)"
+syn match mipfilterTypes "mip_\?filter::\(nearest\|linear\|none\)"
 
 hi def link metalFloat Number
 hi def link attributes metalTypes
 hi def link packedMetalTypes metalTypes
 hi def link matrixMetalTypes metalTypes
 hi def link pixelTypes metalTypes
+hi def link accessTypes metalTypes
+hi def link coordTypes metalTypes
+hi def link addressTypes metalTypes
+hi def link filterTypes metalTypes
+hi def link mipfilterTypes metalTypes
 hi def link metalTypes Type
 hi def link basicMetalKeywords Constant
 hi def link scalarMetalTypes Type
