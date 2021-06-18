@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Apple Metal Shading Language v2.1
 " Maintainer: Stewart Imel
-" Latest Revision: 30 November 2018
+" Latest Revision: 17 June 2021
 
 if exists("b:current_syntax")
 	finish
@@ -23,7 +23,7 @@ syn match metalFloat "\d\+\.\d*[Hh]"
 syn match metalFloat "\d\+[Uu]"
 
 syn match attributes "\[\[.*\]\]"
-syn match metalTypes "\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
+syn match metalTypes "\<\(bool\|char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match packedMetalTypes "packed_\(char\|uchar\|short\|ushort\|half\|int\|uint\|float\)[2-4]"
 syn match atomicType "atomic_\(int\|uint\|bool\)"
 syn match atomicTemplate "atomic<\(int\|uint\|bool\)>"
@@ -42,6 +42,7 @@ syn match pixelTypes "rg\(11b10f\|b9e5\)<\(half3\|float3\)>"
 hi def link metalFloat Number
 hi def link attributes metalTypes
 hi def link packedMetalTypes metalTypes
+hi def link matrixMetalTypes metalTypes
 hi def link pixelTypes metalTypes
 hi def link metalTypes Type
 hi def link basicMetalKeywords Constant
